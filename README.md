@@ -203,9 +203,14 @@ or run the following command to enable dns based multitenancy
     sudo supervisorctl restart all
 ```
 # Install Frappe Apps
-#### To install an app
+#### To install an app from the Frappe App Store
 ```sh
-    bench get-app <app-name> <app-repo-url>
+    bench get-app <app-name>
+    bench --site <site-name> install-app <app-name>
+```
+#### To install an app from a custom repository
+```sh
+    bench get-app <app-repo-url>
     bench --site <site-name> install-app <app-name>
 ```
 #### To uninstall an app
