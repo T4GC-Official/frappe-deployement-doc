@@ -116,7 +116,100 @@ Description: Frappe is a full-stack web application framework written in Python,
  
 Congratulations! You have successfully installed the Frappe Framework on your system.
 <hr>
-##################### Now the bench is ready to create and deploy new sites  #####################
+##################### Now the bench is ready to create new sites for development #####################
 <hr>
 
+# Production Setup
+
+#### Install Nginx
+```sh
+    sudo apt-get install nginx
+```
+
+#### Install Supervisor
+```sh
+    sudo apt-get install supervisor
+```
+
+#### Install Fail2ban
+```sh
+    sudo apt-get install fail2ban
+```
+#### Install Certbot
+```sh
+    sudo apt-get install certbot python3-certbot-nginx -y
+```
+#### Create a new site
+```sh
+    bench new-site <site-name> --admin-password <site-admin-password> --db-root-password <mariadb-root-password>
+```
+#### Enable SSL for your site using Let's Encrypt but before that make sure your domain is pointing to the server's IP address.
+you will also need to enable dns based multitenancy in site_config.json file
+```sh
+    sudo nano /home/frappe/frappe-bench/sites/<site-name>/site_config.json
+```
+```json
+{
+    "db_name": "site-name",
+    "db_password": "site-db-password",
+    "dns_multitenant": 1
+}
+```
+or run the following command to enable dns based multitenancy
+```sh
+    bench config dns_multitenant on
+```
+
+#### Setup Redis Cache,Redis Queue and socketio
+```sh
+    bench setup redis
+    bench setup socketio
+```
+#### Setup fail2ban
+```sh
+    sudo bench setup fail2ban
+```
+#### Setup Nginx
+```sh
+    sudo bench setup nginx
+```
+
+#### Setup Let's Encrypt
+```sh
+    sudo -H bench setup lets-encrypt <site-name>
+```
+
+#### Setup Supervisor
+```sh
+    sudo bench setup supervisor
+```
+#### Start Supervisor
+```sh
+    sudo supervisorctl relaod
+    sudo supervisorctl status all
+    sudo supervisorctl start all
+```
+# Localhost Development Setup
+#### To enable developer mode
+```sh
+    bench set-config developer_mode 1
+```
+#### To enable auto-reload
+```sh
+    bench watch
+```
+#### To start the development server
+```sh
+    sudo supervisorctl restart all
+```
+# Install Frappe Apps
+#### To install an app
+```sh
+    bench get-app <app-name> <app-repo-url>
+    bench --site <site-name> install-app <app-name>
+```
+#### To uninstall an app
+```sh
+    bench --site <site-name> uninstall-app <app-name>
+```
 
