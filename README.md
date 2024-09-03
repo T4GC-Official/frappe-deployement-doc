@@ -34,7 +34,7 @@ Description: Redis is an open-source, in-memory data structure store, used as a 
 Description: Python is a programming language that lets you work quickly and integrate systems more effectively.
 
 ```sh
-    sudo apt-get install python3 python3-dev python3-pip
+    sudo apt-get install python3 python3-dev python3-pip python3.10-venv -y
 ```
 ## Install MariaDB
 Description: MariaDB is a community-developed, commercially supported fork of the MySQL relational database management system.
@@ -102,9 +102,7 @@ Description: Yarn is a package manager that doubles down as project manager. Whe
 Download and install wkhtmltopdf package from https://wkhtmltopdf.org/downloads.html
 
 ```sh
-    sudo apt-get install -y wget
-    wget  https://wkhtmltopdf.org/downloads.html
-    dpkg -i wkhtmltox_file.deb
+  sudo apt-get install -y wkhtmltopdf
 ```
 
 ## Install Frappe Framework
