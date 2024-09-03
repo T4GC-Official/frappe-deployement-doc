@@ -73,6 +73,7 @@ Description: Node.js is an open-source, cross-platform, back-end JavaScript runt
     source ~/.bashrc
     nvm install 21
     nvm use 21
+    source .profile 
 ```
 #### Check Node version 
 Note: The version should be 21.x or above. for latest version of frappe framework 15.x
