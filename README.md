@@ -71,8 +71,8 @@ Description: Node.js is an open-source, cross-platform, back-end JavaScript runt
 ```sh
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     source ~/.profile 
-    nvm install 21
-    nvm use 21
+    nvm install 20
+    nvm use 20
 
 ```
 #### Check Node version 
