@@ -70,10 +70,10 @@ Description: Node.js is an open-source, cross-platform, back-end JavaScript runt
 #### Install node using nvm (Node Version Manager)
 ```sh
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    source ~/.bashrc
+    source ~/.profile 
     nvm install 21
     nvm use 21
-    source .profile 
+
 ```
 #### Check Node version 
 Note: The version should be 21.x or above. for latest version of frappe framework 15.x
