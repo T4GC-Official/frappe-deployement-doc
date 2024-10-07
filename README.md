@@ -7,7 +7,7 @@ This guide provides step-by-step instructions to install the Frappe Framework on
 Before you begin, ensure you have the following installed on your system:
 
 - Python 3.6+ python3-dev python3-pip
-- Node.js 21.x
+- Node.js 20.x
 - Redis 6.x
 - MariaDB 10.6.6+
 - yarn
@@ -65,7 +65,7 @@ default-character-set = utf8mb4
     sudo systemctl restart mariadb
 ```
 
-## Install Node.js 21.x
+## Install Node.js 20.x
 Description: Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
 #### Install node using nvm (Node Version Manager)
 ```sh
